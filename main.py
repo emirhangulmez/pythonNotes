@@ -1,73 +1,72 @@
-import random
-
 # Python Refreshing
 # Author: Emirhan Gulmez
-x = 1
-y = random.randrange(1, 1000)
-print(y)
 
-while x < 2:
-    print(type(x))
-    x += 1
+# Variables
+x = 10
+y = 20
+z = 30
 
-name = "Emirhan Gulmez"
-print(name[8])
-print(len(name))
+# Other way
+(a, b, c) = (10, 20, 30)
+# Additional Feature
+(c, b, a) = (a, b, c)
 
 # Slicing
+name = "Emirhan Gulmez"
+splittedName = name.split()
+lengthName = len(name)
+# name[start:end:step]
+# Reversing -> print(name[::-1])
 
-print(name[1::])
-print(name[::-1])
-temp = name.split()
-print(temp[1])
-# Collectıons
 
-# Lists
-myList = [1, 2, 3, 4, 5, 6]
+# Collections
+myList = [1, ['list', 1, 2], 3, 4.0, True]  # List -> Regular List
 
-mySecondList = list()
-mySecondList.append('a')
-mySecondList.append('b')
-print(mySecondList)
-myMixedList = [0, True, 'emirhan', 0.5, 1000]
-print(type(myMixedList[1]))
-myNestedList = [0, 1, 2, 3, [1, True], 12.0]
-print(myNestedList[4][1])
+mySet = {1, 1, 2, 2, 3, 3, 4, 5}  # Set -> {1, 2, 3, 4, 5} Unique
 
-element = input("Enter a number:")
-print(element.isspace())
-if element.isnumeric():
-    number = int(element)
-    print(number + 1000)
+myTuple = (1, 2, 3, 3, 4, 5)  # Tuple -> You cannot assign.
+myTuple.count(3)  # 2
+
+myDict = {1: 2, 4: 3}  # Dictionary -> Hashmap style (key-value-pairing)
+myDict.get(6, 0)  # 6 is not defined -> 0
+myDict.items()  # (1, 2), (4, 3)
+myDict.values()  # [2,3]
+
+# Converting data structures to each other #
+
+# Error Handling
+
+ageInput = 0  # input("Enter Age: ")
+
+try:
+    result = int(ageInput)
+except ValueError as e:
+    print(e)
+    result = "An error occurred!"
+
+# If Statement and Operators
+x = 10
+if 0 < x <= 30:
+    text = "0 > x <= 30"
+elif 30 < x <= 40:
+    text = "30 > x <= 40"
 else:
-    print("Please enter the integer!")
+    text = "x > 40"
 
+numbersList = [10, 20, 30, 40, 50]
 
-# Dictionary (key-value-pairing)
-myDictionary = {'elma':100,"banana":200}
-print(myDictionary['elma'])
-myDictionary["apple"] = 200
-dict = myDictionary.get("emirhan",0)
-print(dict)
-myDictionary.pop("banana")
-dict_items = myDictionary.items()
-dict_values = myDictionary.values()
-print(dict_values)
+for numbers in numbersList:
+    squareOfNumbers = numbers ** 2  # Returns the all of lists items square numbers
 
-# Set
+number = 0
+while number < 10:
+    # 1,2,3,4,5,6,7,8,9
+    number += 1
 
-mySet = {1, 1, 1, 1, 1, 1, 2}
-print(mySet)
+eq = "e" in "Machine"  # Return true
 
-myTuple = (1, 1, 2, 3, 4, 5, 6, 7, 8)
-# :name_badge:
-# myTuple[0] = 1
-print(myTuple.count(1))
+# Formatted String
+# print(f"Your Age: {age}) or print("Your Age", age)
 
-(a,b) = (1,2)
-print(a)
-print(b)
-
-(a,b) = (b,a)
-print(a)
-print(b)
+# Remainder
+# print(10%4) # Returns 2
